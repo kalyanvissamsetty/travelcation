@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<title>Contact Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--// Meta tag Keywords -->
+<!-- css files -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> <!-- Bootstrap-Core-CSS -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" /> <!-- Style-CSS -->
+<link rel="stylesheet" href="{% static 'css/font-awesome.css' %} "> <!-- Font-Awesome-Icons-CSS -->
+<!-- //css files -->
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Coda:400,800&amp;subset=latin-ext" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext" rel="stylesheet">
+<!-- //online-fonts -->
+</head>
+<body> 
+<div class="main-agile banner-2">
+	<!-- header -->
+	<div class="header-w3layouts"> 
+		<!-- Navigation -->
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Travelcation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div> 
+			<div class="logo-agile-1"> 
+				<h1><a class="logo" href = "{% url 'module1:home' %}"><i class="fa fa-plane" aria-hidden="true"></i>Travelcation</a></h1>
+			</div> 
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+					<li class=""><a href = "{% url 'module1:home' %}">Home</a></li>
+					<li><a class="" href = "{% url 'module1:services' %}">Services</a></li>
+					<li><a class="" href = "{% url 'module1:gallery' %}">Gallery</a></li>
+					<li class="active"><a class="" href = "{% url 'module1:contact' %}">Contact Us</a></li>
+				</ul>
+				<div class="w3ls-social-icons-2">
+					<a class="facebook" href="https://www.facebook.com/KalyanVissamsetty"><i class="fa fa-facebook"></i></a>
+					<a class="twitter" href="https://twitter.com/kalyan_youtuber"><i class="fa fa-twitter"></i></a>
+					<a class="pinterest" href="https://pin.it/6nsRyyH"><i class="fa fa-google-plus"></i></a>
+					<a class="linkedin" href="https://www.linkedin.com/in/vissamsetty-kalyan-27a28918a/"><i class="fa fa-linkedin"></i></a>
+				</div>
+			</div>
+			<!-- //navbar-collapse -->
+		</nav>  
+	</div>	
+	<!-- //header -->
+</div> 
+<!-- contact -->
+<section class="contact-w3ls">
+	<div class="container">
+		<h3 class="agile-title">Contact Us</h3>
+		<div class="w3layouts_header">
+			<p><span><i class="fa fa-plane sub-w3l" aria-hidden="true"></i></span></p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 contact-w3-agile2" data-aos="flip-left">
+			<div class="contact-agileits">
+				<h4>Get In Touch</h4>
+				<form action="#" method="post">
+					<div class="control-group form-group">
+                        <div class="controls">
+                            <label class="contact-p1">Full Name:</label> 
+                            <input type="text" class="form-control" name="name" id="name" Placeholder=" " required="">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>	
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label class="contact-p1">Phone Number:</label>
+                            <input type="tel" class="form-control" name="phone" id="phone" Placeholder=" " required="">
+							<p class="help-block"></p>
+						</div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label class="contact-p1">Email Address:</label>
+                            <input type="email" class="form-control" name="email" id="email" Placeholder=" " required="">
+							<p class="help-block"></p>
+						</div>
+                    </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-primary">Send</button>	
+				</form>            
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 contact-w3-agile1" data-aos="flip-right">
+			<h4 class="w3l-contact">Connect With Us</h4>
+			<p class="contact-agile1"><strong>Phone :</strong> +91 9182421379</p>
+			<p class="contact-agile1"><strong>Email :</strong> <a href="mailto:vissamsettykalyan@gmail.com">vissamsettykalyan@gmail.com</a></p>
+			<p class="contact-agile1"><strong>Address :</strong> Vijayawada</p>											
+			<div class="social-bnr-agileits footer-icons-agileinfo">
+				<ul class="social-icons3">
+					<li><a href="https://www.facebook.com/KalyanVissamsetty" class="fa fa-facebook icon-border facebook"> </a></li>
+					<li><a href="https://twitter.com/kalyan_youtuber" class="fa fa-twitter icon-border twitter"> </a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</section>
+<!-- map -->
+<!-- <div class="w3l-map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3074.7905052320443!2d-77.84987248482734!3d39.586871613613056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c9f6a80ccf0661%3A0x7210426c67abc40!2sVirginia+Welcome+Center%2FSafety+Rest+Area!5e0!3m2!1sen!2sin!4v1485760915662" ></iframe>
+</div> -->
+<!-- //map -->
+<!-- //contact -->
+<!-- footer -->
+<footer>
+	<div class="agileinfo-footer">
+		<div class="container">
+			<div class="agileits-footer-top">
+				<div class="col-sm-4 w3ls-address-grid">
+					<i class="glyphicon glyphicon-map-marker"></i>
+					<div class="w3-address1">
+						<p>Vijayawada</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-sm-4 w3ls-address-grid">
+					<i class="glyphicon glyphicon-phone"></i>
+					<div class="w3-address1">
+						<p>+91 9182421379</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-sm-4 w3ls-address-grid">
+					<i class="glyphicon glyphicon-envelope"></i>
+					<div class="w3-address1">
+						<p><a href="mmailto:vissamsettykalyan@gmail.com">vissamsettykalyan@gmail.com</a></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<!-- newsletter -->
+			<div class="w3layouts-newsletter">
+				<div class="col-md-5 wthree-join">
+					<h2><i class="fa fa-envelope" aria-hidden="true"></i>Join our Newsletter</h2>
+				</div>
+				<div class="col-md-7 agileinfo-newsletter">
+					<form action="#" method="post">
+						<input type="email"	placeholder="Enter Your Email" name="email" required="" />
+						<input type="submit" value="Subscribe">
+					</form>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<!-- //newsletter -->
+			<!-- Counter -->
+			<div class="services-bottom">
+				<div class="counter-agile">
+					<div class="counter-subw3l">
+						<p><a href = "{% url 'module1:home' %}"><i class="fa fa-plane" aria-hidden="true"></i>Travelcation</a></p>
+					</div>
+					<div class="ftr-menu">
+						 <ul>
+
+							 <li class=""><a href = "{% url 'module1:home' %}">Home</a></li>
+							<li><a class="" href = "{% url 'module1:services' %}">Services</a></li>
+							<li><a class="" href = "{% url 'module1:gallery' %}">Gallery</a></li>
+							<li class="active"><a class="" href = "{% url 'module1:contact' %}">Contact Us</a></li>
+						 </ul>
+					</div>
+
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<!-- //Counter -->
+		</div>
+		<div class="agileits-footer-bottom">
+			<p class="footer-class">&copy; 2021 Travelcation. All Rights Reserved </p>
+		</div>
+	</div>
+</footer>
+	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="backbox">
+      <div class="loginMsg">
+        <div class="textcontent">
+          <p class="title">Don't have an account?</p>
+          <p>Sign up to start your Journey</p>
+          <button id="switch1">Sign Up</button>
+        </div>
+      </div>
+      <div class="signupMsg visibility">
+        <div class="textcontent">
+          <p class="title">Have an account?</p>
+          <p>Log in to your Account Now</p>
+          <button id="switch2">LOG IN</button>
+        </div>
+      </div>
+    </div>
+    <!-- backbox -->
+
+    <div class="frontbox">
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+          <div class="login">
+            <h2>LOG IN</h2>
+            <div class="inputbox">
+              <input type="text" name="email" placeholder="  EMAIL">
+              <input type="password" name="password" placeholder="  PASSWORD">
+            </div>
+            <p>FORGET PASSWORD?</p>
+            <button type="submit">LOG IN</button>
+          </div>
+        </form>
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+          <div class="signup hide">
+            <h2>SIGN UP</h2>
+            <div class="inputbox">
+              <input type="text" name="fullname" placeholder="  FULLNAME">
+              <input type="text" name="email" placeholder="  EMAIL">
+                <input type="text" name="phone" placeholder="  PHONE">
+              <input type="password" name="password" placeholder="  PASSWORD">
+            </div>
+            <button type="submit">SIGN UP</button>
+            </div>
+        </form>
+
+    </div>
+    <!-- frontbox -->
+  </div>
+      {% for message in messages %}
+         <h2>{{ message}}</h2>
+      {%endfor%}
+</body>
+
+<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+</html>
