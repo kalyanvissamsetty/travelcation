@@ -1,30 +1,28 @@
 from django.shortcuts import render
-from django.shortcuts import render,redirect
-from django.contrib import messages
+from django.shortcuts import render, redirect
+from django.contrib import messages, auth
 from .models import User
 from django.db import connections
 from operator import itemgetter
 from module1 import views
-from django.contrib.auth.models import User,auth
 
 
 def login(request):
-    context = {}
     if request.method == "POST":
         email = request.POST['email']
         password = request.POST['password']
-        user = auth.authenticate(email=email, password=password)
-        if user is not None:
-
-            print(1)
-            return redirect('module1:home')
+        x = auth.authenticate(email=email, password=password)
+        print(x)
+        if x is None:
+            print("none")
+            return redirect('module1:services')
         else:
-            messages.error(request,'Invalid Credentials')
-            print(2)
-            return redirect('login')
+            print("password incorrect")
+            return redirect('module1:home')
     else:
-        print(3)
-        return render(request, 'login.html', context)
+        print('else part')
+        return render(request, 'login.html')
+    return redirect('module1:gallery')
 
 
 def register(request):
@@ -39,6 +37,6 @@ def register(request):
             messages.info(request, "Some fields are missing")
             return redirect('login')
         else:
-            messages.info(request, "Click on Login to start Your Journey")
             user.save()
     return redirect('login')
+
