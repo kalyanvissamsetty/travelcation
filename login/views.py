@@ -112,6 +112,10 @@ def registerPage(request):
             request.session['uname'] = username
             request.session['email'] = email
             request.session['phone'] = phone
+            new_user = authenticate(username=form.cleaned_data['username'],
+                                    password=form.cleaned_data['password1'],
+                                    )
+            login(request, new_user)
             html_content = render_to_string("email_template.html",
                                             {'title': 'Travelcation Registration', 'username': username})
             text_content = strip_tags(html_content)
