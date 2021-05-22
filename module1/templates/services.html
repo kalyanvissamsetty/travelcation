@@ -28,23 +28,21 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</button>
 			</div> 
 			<div class="logo-agile-1"> 
-				<h1><a class="logo" href = "{% url 'home' %}"><i class="fa fa-plane" aria-hidden="true"></i>Travelcation</a></h1>
+				<h1><a class="logo" href = "{% url 'module1:home' %}"><i class="fa fa-plane" aria-hidden="true"></i>Travelcation</a></h1>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+					<li><a class="" style="color: black; font-size:17px">Welcome, {{u}}</a></li>
 					<li><a href = "{% url 'module1:home' %}">Home</a></li>
 					<li class="active"><a href = "{% url 'module1:services' %}">Services</a></li>
 					<li><a class="" href = "{% url 'module1:gallery' %}">Gallery</a></li>
 					<li><a class="" href = "{% url 'module1:contact' %}">Contact Us</a></li>
+					<li><a class="" href = "{% url 'initial:profile' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Profile</a></li>
+					<li><a class="" href = "{% url 'module1:dologout' %}">Logout</a></li>
 				</ul>
-				<div class="w3ls-social-icons-2">
-					<a class="facebook" href="https://www.facebook.com/KalyanVissamsetty"><i class="fa fa-facebook"></i></a>
-					<a class="twitter" href="https://twitter.com/kalyan_youtuber"><i class="fa fa-twitter"></i></a>
-					<a class="pinterest" href="https://pin.it/6nsRyyH"><i class="fa fa-google-plus"></i></a>
-					<a class="linkedin" href="https://www.linkedin.com/in/vissamsetty-kalyan-27a28918a/"><i class="fa fa-linkedin"></i></a>
-				</div>
+
 			</div>
 			<!-- //navbar-collapse -->
 		</nav>  
@@ -67,8 +65,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 				<div class="col-xs-8 w3layouts_banner_bottom_servicer">
 					<h4>Beautiful Places</h4>
-					<p>Quisque mattis orci quis porttitor posuere ut bibendum 
-						tincidu</p>
+					<p>Travel and change of place impart new vigor to the mind</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -79,8 +76,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 				<div class="col-xs-8 w3layouts_banner_bottom_servicer">
 					<h4>Passionate Travel</h4>
-					<p>Quisque mattis orci quis porttitor posuere ut bibendum 
-						tincidu</p>
+					<p>The most beautiful in the world is, of course, the world itself.</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -91,8 +87,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 				<div class="col-xs-8 w3layouts_banner_bottom_servicer">
 					<h4>Value for Money</h4>
-					<p>Quisque mattis orci quis porttitor posuere ut bibendum 
-						tincidu</p>
+					<p>Travel makes one modest. You see what a tiny place you occupy in the world.</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -129,187 +124,160 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Popular -->
 <div class="albums">
 	<div class="container">
-		<h3 class="agile-title">LATEST POST</h3> 
+		<h3 class="agile-title">MOST POPULAR</h3>
 		<div class="w3layouts_header">
 			<p><span><i class="fa fa-plane sub-w3l" aria-hidden="true"></i></span></p>
 		</div>
 		<div class="col-md-6 w3lsalbums-grid">
-			<div class="albums-left"> 
-				<div class="wthree-almub">  
+			<div class="albums-left">
+				<div class="wthree-almub">
 				</div>
 			</div>
 			<div class="albums-right">
-				<h4>Dolor Sit</h4>
-				<p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
-				<a class="w3more" href = "{% url 'module1:services' %}"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
+				<h4>Hyderabad</h4>
+				<p>Hyderabad is the capital of Telangana in Southern India, located on the banks of the Musi River and on the Deccan Plateau.</p>
+
 			</div>
 			<div class="clearfix"></div>
 		</div>
 		<div class="col-md-6 w3lsalbums-grid">
-			<div class="albums-left"> 
-				<div class="wthree-almub wthree-almub2"> 
-				</div> 
+			<div class="albums-left">
+				<div class="wthree-almub wthree-almub2">
+				</div>
 			</div>
 			<div class="albums-right">
-				<h4>Consequat</h4>
-				<p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
+				<h4>New Delhi</h4>
+				<p>New Delhi is the capital of India .New Delhi is also the seat of all three branches of the government of India,</p>
 				<a class="w3more" href = "{% url 'module1:services' %}"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
 			</div>
-			<div class="clearfix"></div>
-		</div>  
-		<div class="col-md-6 w3lsalbums-grid">
-			<div class="albums1-right"> 
-				<div class="wthree-almub wthree-almub3">  
-				</div>
-			</div>
-			<div class="albums1-left">
-				<h4>Dolores Btrs</h4>
-				<p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
-				<a class="w3more" href = "{% url 'module1:services' %}"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
-			</div> 
 			<div class="clearfix"></div>
 		</div>
 		<div class="col-md-6 w3lsalbums-grid">
-			<div class="albums1-right"> 
-				<div class="wthree-almub wthree-almub4">  
+			<div class="albums1-right">
+				<div class="wthree-almub wthree-almub3">
 				</div>
 			</div>
 			<div class="albums1-left">
-				<h4>Nam aliquam</h4>
-				<p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
+				<h4>Mumbai</h4>
+				<p>Mumbai also known as Bombay, the official name until 1995) is the capital city of Maharashtra</p>
 				<a class="w3more" href = "{% url 'module1:services' %}"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
-			</div> 
+			</div>
 			<div class="clearfix"></div>
 		</div>
-		<div class="clearfix"></div> 
+		<div class="col-md-6 w3lsalbums-grid">
+			<div class="albums1-right">
+				<div class="wthree-almub wthree-almub4">
+				</div>
+			</div>
+			<div class="albums1-left">
+				<h4>Bengaluru</h4>
+				<p>Bangalore, officially known as Bengaluru is the capital and the largest city of the Indian state of Karnataka. </p>
+				<a class="w3more" href = "{% url 'module1:services' %}"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
 	</div>
 </div>
-<!-- //Popular --> 
-<!-- team -->
 <div class="team">
-	<div class="container">
-		<h3 class="agile-title">Team</h3> 
-		<div class="w3layouts_header">
-			<p><span><i class="fa fa-plane sub-w3l" aria-hidden="true"></i></span></p>
-		</div>
-		<div class="wthree_team_grids">
-			<div class="col-md-3 wthree_team_grid">
-				<div class="hovereffect">
-					<img src="{% static 'images/t1.jpg' %}" alt=" " class="img-responsive" />
-					<div class="overlay">
-						<h6>Tourism</h6>
-						<div class="rotate">
-							<p class="group1">
-								<a href="#">
-									<i class="fa fa-twitter"></i>
-								</a>
-								<a href="#">
-									<i class="fa fa-facebook"></i>
-								</a>
-							</p>
-								<hr>
-								<hr>
-							<p class="group2">
-								<a href="#">
-									<i class="fa fa-instagram"></i>
-								</a>
+  <div class="container">
+    <h3 class="agile-title">Team</h3> 
+    <div class="w3layouts_header">
+      <p><span><i class="fa fa-plane sub-w3l" aria-hidden="true"></i></span></p>
+    </div>
+    <div class="wthree_team_grids">
+      <div class="col-md-3 wthree_team_grid">
+        <div class="hovereffect">
+          <img src="{% static 'images/siva1.jpg' %}" alt=" " class="img-responsive" />
+          <div class="overlay">
+            <h6>Tourism</h6>
+            <div class="rotate">
+              <p class="group1">
+                <a href="https://twitter.com/sivaganesh7568">
+                  <i class="fa fa-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/sivaganesh1528">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </p>
+                <hr>
+                <hr>
+              <p class="group2">
+                <a href="https://www.instagram.com/siva_ganesh._/">
+                  <i class="fa fa-instagram"></i>
+                </a>
+                <a href="https://github.com/CHSivaGanesh">
+                  <i class="fa fa-github"></i>
+                </a>
 
-							</p>
-						</div>
-					</div>
-				</div>
-				<h4>Andria Chris</h4>
-				<p>Agent</p>
-			</div>
-			<div class="col-md-3 wthree_team_grid">
-				<div class="hovereffect">
-					<img src="{% static 'images/t2.jpg' %}" alt=" " class="img-responsive" />
-					<div class="overlay">
-						<h6>Tourism</h6>
-						<div class="rotate">
-							<p class="group1">
-								<a href="#">
-									<i class="fa fa-twitter"></i>
-								</a>
-								<a href="#">
-									<i class="fa fa-facebook"></i>
-								</a>
-							</p>
-								<hr>
-								<hr>
-							<p class="group2">
-								<a href="#">
-									<i class="fa fa-instagram"></i>
-								</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <h4>Siva Ganesh</h4>
+        <p>Organiser</p>
+      </div>
+      <div class="col-md-3 wthree_team_grid">
+        <div class="hovereffect">
+          <img src="{% static 'images/kalyan.jpg' %}" alt=" " class="img-responsive" />
+          <div class="overlay">
+            <h6>Tourism</h6>
+            <div class="rotate">
+              <p class="group1">
+                <a href="https://mobile.twitter.com/kalyan_youtuber">
+                  <i class="fa fa-twitter"></i>
+                </a>
+                <a href="https://m.facebook.com/KalyanVissamsetty?ref=bookmarks">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </p>
+                <hr>
+                <hr>
+              <p class="group2">
+                <a href="https://www.instagram.com/vissamsettykalyan/">
+                  <i class="fa fa-instagram"></i>
+                </a>
+                <a href="https://github.com/kalyanvissamsetty">
+                  <i class="fa fa-github"></i>
+                </a>
 
-							</p>
-						</div>
-					</div>
-				</div>
-				<h4>Michael Lii</h4>
-				<p>Agent</p>
-			</div>
-			<div class="col-md-3 wthree_team_grid">
-				<div class="hovereffect">
-					<img src="{% static 'images/t3.jpg' %}" alt=" " class="img-responsive" />
-					<div class="overlay">
-						<h6>Tourism</h6>
-						<div class="rotate">
-							<p class="group1">
-								<a href="#">
-									<i class="fa fa-twitter"></i>
-								</a>
-								<a href="#">
-									<i class="fa fa-facebook"></i>
-								</a>
-							</p>
-								<hr>
-								<hr>
-							<p class="group2">
-								<a href="#">
-									<i class="fa fa-instagram"></i>
-								</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<h4>Laura Paul</h4>
-				<p>Manager</p>
-			</div>
-			<div class="col-md-3 wthree_team_grid">
-				<div class="hovereffect">
-					<img src="{% static 'images/t4.jpg' %}" alt=" " class="img-responsive" />
-					<div class="overlay">
-						<h6>Tourism</h6>
-						<div class="rotate">
-							<p class="group1">
-								<a href="#">
-									<i class="fa fa-twitter"></i>
-								</a>
-								<a href="#">
-									<i class="fa fa-facebook"></i>
-								</a>
-							</p>
-								<hr>
-								<hr>
-							<p class="group2">
-								<a href="#">
-									<i class="fa fa-instagram"></i>
-								</a>
-
-							</p>
-						</div>
-					</div>
-				</div>
-				<h4>Rosy Doe</h4>
-				<p>Agent</p>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-	</div>
-</div>
-<!-- //team -->
-<!-- footer -->
+              </p>
+            </div>
+          </div>
+        </div>
+        <h4>Kalyan Vissamsetty</h4>
+        <p>Admin</p>
+      </div>
+      <div class="col-md-3 wthree_team_grid">
+        <div class="hovereffect">
+          <img src="{% static 'images/tharun.jpg' %}" alt=" " class="img-responsive" />
+          <div class="overlay">
+            <h6>Tourism</h6>
+            <div class="rotate">
+              <p class="group1">
+                <a href="https://twitter.com/tharunmannam?s=08">
+                  <i class="fa fa-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/tharun.chowdary.9003">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </p>
+                <hr>
+                <hr>
+              <p class="group2">
+                <a href="https://www.instagram.com/tharun_mannam/">
+                  <i class="fa fa-instagram"></i>
+                </a>
+                <a href="https://github.com/tharunmannam">
+                  <i class="fa fa-github"></i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <h4>Tharun Chowdary</h4>
+        <p>Manager</p>
+      </div>
 <footer>
 	<div class="agileinfo-footer">
 		<div class="container">
@@ -353,7 +321,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="services-bottom">
 				<div class="counter-agile">
 					<div class="counter-subw3l">
-						<p><a href = "{% url 'home' %}"><i class="fa fa-plane" aria-hidden="true"></i>Travelcation</a></p>
+						<p><a href = "{% url 'module1:home' %}"><i class="fa fa-plane" aria-hidden="true"></i>Travelcation</a></p>
 					</div>
 					<div class="ftr-menu">
 						 <ul>

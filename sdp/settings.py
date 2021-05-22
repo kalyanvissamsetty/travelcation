@@ -13,9 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '$ia8xh27!f*-*tegmh!5r^r25+9l$!n++#ll8y)d#k&tfbva02'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['travelcation.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -30,6 +30,8 @@ INSTALLED_APPS = [
     'module1.apps.Module1Config',
     'login.apps.LoginConfig',
     'module2.apps.Module2Config',
+    'jquery',
+    'crispy_forms'
 
 ]
 
@@ -41,14 +43,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNosieMiddleware'
 ]
 
 ROOT_URLCONF = 'sdp.urls'
-
+TEMPLATE_DIR = os.path.join(BASE_DIR, "allhtml")
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -114,8 +117,20 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'sdp567travelcation@gmail.com'
+EMAIL_HOST_PASSWORD = 'travelcation@sdp567'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

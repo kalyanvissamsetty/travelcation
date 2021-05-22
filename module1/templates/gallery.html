@@ -39,18 +39,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+					<li><a class="" style="color: black; font-size:17px">Welcome, {{u}}</a></li>
 					<li class=""><a href = "{% url 'module1:home' %}">Home</a></li>
 					<li><a class="" href = "{% url 'module1:services' %}">Services</a></li>
 					<li class="active"><a class="" href = "{% url 'module1:gallery' %}">Gallery</a></li>
 					<li><a class="" href = "{% url 'module1:contact' %}">Contact Us</a></li>
+					<li><a class="" href = "{% url 'initial:profile' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Profile</a></li>
+					<li><a class="" href = "{% url 'module1:dologout' %}">Logout</a></li>
 				</ul>
-				<div class="w3ls-social-icons-2">
-					<a class="facebook" href="https://www.facebook.com/KalyanVissamsetty"><i class="fa fa-facebook"></i></a>
-					<a class="twitter" href="https://twitter.com/kalyan_youtuber"><i class="fa fa-twitter"></i></a>
-					<a class="pinterest" href="https://pin.it/6nsRyyH"><i class="fa fa-google-plus"></i></a>
-					<a class="linkedin" href="https://www.linkedin.com/in/vissamsetty-kalyan-27a28918a/"><i class="fa fa-linkedin"></i></a>
-				</div>
 			</div>
 			<!-- //navbar-collapse -->
 		</nav>  
@@ -69,95 +65,95 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<ul class="simplefilter">
 			<li class="active" data-filter="all">All</li>
 			<li data-filter="1">India</li>
-			<li data-filter="2">USA</li>
-			<li data-filter="3">Germany</li>
-			<li data-filter="4">Australia</li>
+			<li data-filter="2">Hyderabad</li>
+			<li data-filter="3">Dubai</li>
+			<li data-filter="4">New Delhi</li>
 		</ul>
 		<div class="filtr-container">
-			<div class="  filtr-item gallery-t" data-category="1, 3" data-sort="Busy streets">
-				<a href="{% static 'images/g1.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+			<div class="  filtr-item gallery-t" data-category="1, 2" data-sort="Busy streets">
+				<a href="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/68000/68047-Hyderabad-And-Vicinity.jpg" class="b-link-stripe b-animate-go  thickbox">
 					<figure class="w3ls-gallery">
-						<img src="{% static 'images/g1.jpg' %}" class="img-responsive" alt=" " />
+						<img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/68000/68047-Hyderabad-And-Vicinity.jpg" class="img-responsive" alt=" " />
 						<figcaption class="w3layouts-caption">
 							<h3>Tourism</h3>
 						</figcaption>
 					</figure>
 				</a>
 			</div>
-			<div class=" filtr-item" data-category="2" data-sort="Luminous night">
-			   <a href="{% static 'images/g2.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+			<div class=" filtr-item" data-category="1, 2" data-sort="Luminous night">
+			   <a href="https://www.nationsonline.org/gallery/India/Buddha-statue-Hussain-Sagar-lake-Hyderabad.jpg" class="b-link-stripe b-animate-go  thickbox">
 				<figure class="w3ls-gallery">
-					<img src="{% static 'images/g2.jpg' %}" class="img-responsive" alt=" " />
+					<img src="https://www.nationsonline.org/gallery/India/Buddha-statue-Hussain-Sagar-lake-Hyderabad.jpg" class="img-responsive" alt=" " />
 					<figcaption class="w3layouts-caption">
 						<h3>Travelcation</h3>
 					</figcaption>
 				</figure>
 				</a>
 			</div>
-			<div class=" filtr-item" data-category="1, 3" data-sort="City wonders">
-				<a href="{% static 'images/g3.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+			<div class=" filtr-item" data-category="1, 2" data-sort="City wonders">
+				<a href="https://www.india-briefing.com/news/wp-content/uploads/2019/07/India-Briefing-Information-technology-sector-%E2%80%93-Hyderabad-or-Bangalore.jpg" class="b-link-stripe b-animate-go  thickbox">
 				<figure class="w3ls-gallery">
-					<img src="{% static 'images/g3.jpg' %}" class="img-responsive" alt=" " />
+					<img src="https://www.india-briefing.com/news/wp-content/uploads/2019/07/India-Briefing-Information-technology-sector-%E2%80%93-Hyderabad-or-Bangalore.jpg" class="img-responsive" alt=" " />
 					<figcaption class="w3layouts-caption">
 						<h3>Tourism</h3>
 					</figcaption>
 				</figure>
 				</a>
 			</div>
-			<div class="  filtr-item" data-category="3" data-sort="In production">
-			   <a href="{% static 'images/g4.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+			<div class="  filtr-item" data-category="1, 4" data-sort="In production">
+			   <a href="https://breathedreamgo.com/wp-content/uploads/2019/04/SS-India-Gate-1200-px.jpg" class="b-link-stripe b-animate-go  thickbox">
 					<figure class="w3ls-gallery">
-						<img src="{% static 'images/g4.jpg' %}" class="img-responsive" alt=" " />
+						<img src="https://breathedreamgo.com/wp-content/uploads/2019/04/SS-India-Gate-1200-px.jpg" class="img-responsive" alt=" " />
 						<figcaption class="w3layouts-caption">
 							<h3>Tourism</h3>
 						</figcaption>
 					</figure>
 				</a>
 			</div>
-			<div class=" filtr-item" data-category="3, 2" data-sort="Industrial site">
-				<a href="{% static 'images/g5.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+			<div class=" filtr-item" data-category="1, 4" data-sort="Industrial site">
+				<a href="http://abhibuscommunity.com/wp-content/uploads/2018/01/delhi-red-fort.jpg" class="b-link-stripe b-animate-go  thickbox">
 					<figure class="w3ls-gallery">
-						<img src="{% static 'images/g5.jpg' %}" class="img-responsive" alt=" " />
+						<img src="http://abhibuscommunity.com/wp-content/uploads/2018/01/delhi-red-fort.jpg" class="img-responsive" alt=" " />
 						<figcaption class="w3layouts-caption">
 							<h3>Tourism</h3>
 						</figcaption>
 					</figure>
 				</a>
 			</div>
-			<div class=" filtr-item" data-category="2, 3" data-sort="Peaceful lake">
-				<a href="{% static 'images/g6.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+			<div class=" filtr-item" data-category="1, 4" data-sort="Peaceful lake">
+				<a href="https://cdn.getyourguide.com/img/location/533591d4b943b.jpeg/88.jpg" class="b-link-stripe b-animate-go  thickbox">
 					<figure class="w3ls-gallery">
-						<img src="{% static 'images/g6.jpg' %}" class="img-responsive" alt=" " />
+						<img src="https://cdn.getyourguide.com/img/location/533591d4b943b.jpeg/88.jpg" class="img-responsive" alt=" " />
 						<figcaption class="w3layouts-caption">
 							<h3>Tourism</h3>
 						</figcaption>
 					</figure>
 				</a>
 			</div>
-			<div class="  filtr-item" data-category="1, 3" data-sort="City lights">
-			   <a href="{% static 'images/g7.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+			<div class="  filtr-item" data-category="3" data-sort="City lights">
+			   <a href="https://www.aljazeera.com/wp-content/uploads/2020/07/970f0766be5049dba5ce06b646a5bb22_18.jpeg?resize=770%2C513" class="b-link-stripe b-animate-go  thickbox">
 					<figure class="w3ls-gallery">
-						<img src="{% static 'images/g7.jpg' %}" class="img-responsive" alt=" " />
+						<img src="https://www.aljazeera.com/wp-content/uploads/2020/07/970f0766be5049dba5ce06b646a5bb22_18.jpeg?resize=770%2C513" class="img-responsive" alt=" " />
 						<figcaption class="w3layouts-caption">
 							<h3>Tourism</h3>
 						</figcaption>
 					</figure>
 				</a>
 			</div>
-			<div class=" filtr-item" data-category="2, 2" data-sort="Dreamhouse">
-			   <a href="{% static 'images/g8.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+			<div class=" filtr-item" data-category="3" data-sort="Dreamhouse">
+			   <a href="https://a.cdn-hotels.com/cos/heroimage/Dubai_42-74722822.jpg?impolicy=fcrop&w=536&h=384&q=high" class="b-link-stripe b-animate-go  thickbox">
 					<figure class="w3ls-gallery">
-						<img src="{% static 'images/g8.jpg' %}" class="img-responsive" alt=" " />
+						<img src="https://a.cdn-hotels.com/cos/heroimage/Dubai_42-74722822.jpg?impolicy=fcrop&w=536&h=384&q=high" class="img-responsive" alt=" " />
 						<figcaption class="w3layouts-caption">
 							<h3>Tourism</h3>
 						</figcaption>
 					</figure>
 				</a>
 			</div>
-			<div class=" filtr-item" data-category="4" data-sort="Dreamhouse">
-				<a href="{% static 'images/g9.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+			<div class=" filtr-item" data-category="3" data-sort="Dreamhouse">
+				<a href="https://content.presspage.com/uploads/2431/1920_dubaiconnect.jpg?10000" class="b-link-stripe b-animate-go  thickbox">
 					<figure class="w3ls-gallery">
-						<img src="{% static 'images/g9.jpg' %}" class="img-responsive" alt=" " />
+						<img src="https://content.presspage.com/uploads/2431/1920_dubaiconnect.jpg?10000" class="img-responsive" alt=" " />
 						<figcaption class="w3layouts-caption">
 								<h3>Tourism</h3>
 						</figcaption>

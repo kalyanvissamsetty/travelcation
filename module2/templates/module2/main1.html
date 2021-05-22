@@ -1,0 +1,297 @@
+
+{% load static %}
+
+
+<head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main1.css' %} ">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
+
+</head>
+<body>
+<div class="plane-container">
+    
+    <div class="plane">
+      <div class="window-line window-line--left"></div>
+      <div class="window-line window-line--right"></div>
+      <div class="plane-wings plane-wings--left"></div>
+      <div class="plane-wings plane-wings--right"></div>
+  
+      <div class="row-map">
+        <div class="seat-map">A</div>
+        <div class="seat-map">B</div>
+        <div class="seat-map">C</div>
+        <div class="seat-map">D</div>
+        <div class="seat-map">E</div>
+        <div class="seat-map">F</div>
+        <div class="seat-map">G</div>
+        <div class="seat-map">H</div>
+        <div class="seat-map">J</div>
+        <div class="seat-map">K</div>
+      </div>
+  
+      <div class="row">
+        <div class="seat-number seat-number--left">1</div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat-number seat-number--right">13</div>
+      </div>
+      <div class="row">
+        <div class="seat-number seat-number--left">2</div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat-number seat-number--right">14</div>
+      </div>
+      <div class="row">
+        <div class="seat-number seat-number--left">3</div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat-number seat-number--right">15</div>
+      </div>
+      <div class="row">
+        <div class="seat-number seat-number--left">4</div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat-number seat-number--right">16</div>
+      </div>
+      <div class="row">
+        <div class="seat-number seat-number--left">5</div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat-number seat-number--right">17</div>
+      </div>
+      <div class="row">
+        <div class="seat-number seat-number--left">6</div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat-number seat-number--right">18</div>
+      </div>
+      <div class="row">
+        <div class="seat-number seat-number--left">7</div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat-number seat-number--right">19</div>
+      </div>
+      <div class="row">
+        <div class="seat-number seat-number--left">8</div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat-number seat-number--right">20</div>
+      </div>
+      <div class="row">
+        <div class="seat-number seat-number--left">9</div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat-number seat-number--right">21</div>
+      </div>
+      <div class="row">
+        <div class="seat-number seat-number--left">10</div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat-number seat-number--right">22</div>
+      </div>
+      <div class="row">
+        <div class="seat-number seat-number--left">11</div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat-number seat-number--right">23</div>
+      </div>
+      <div class="row">
+        <div class="seat-number seat-number--left">12</div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat-number seat-number--right">24</div>
+      </div>
+    </div>
+  </div>
+  <div class="state">
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>available</small>
+      </li>
+      <li>
+        <div class="seat selected"></div>
+        <small>selected</small>
+      </li>
+      <li>
+        <div class="seat occupied"></div>
+        <small>occupied</small>
+      </li>
+    </ul>
+    
+    <div class="information">
+    <center>
+      <p class="text">
+        <span id="count">0</span> Total seats(₹<span id="total">0</span>)
+                                                    
+      </p>
+      </center>
+      <form action="{% url 'module2:paymentforflight' %}" method="POST">
+      {% csrf_token %}
+      <input hidden="true" type="text" id="inp" class="form-control" name="seats" aria-describedby="basic-addon3">
+
+       <button type="submit" class="btn btn-warning">Continue to Payment </button>
+       </form>
+    </div>
+  </div>
+
+  </body>
+
+  <script>
+    const planeContainer = document.querySelector(".plane-container");
+const seats = document.querySelectorAll(".row .seat:not(.occupied)");
+const count = document.getElementById("count");
+const total = document.getElementById("total");
+const inp = document.getElementById("inp");
+populateUI();
+
+const TICKET_PRICE = {{jj}};
+
+function updateSeat() {
+const selectedSeats = document.querySelectorAll(".row .seat.selected");
+const seatsIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
+const selectedSeatsCount = selectedSeats.length;
+inp.value = selectedSeatsCount;
+localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
+localStorage.setItem(
+  "selectedSeatTotalPrice",
+  selectedSeatsCount * TICKET_PRICE
+);
+
+count.innerText = selectedSeatsCount;
+total.innerText = selectedSeatsCount * TICKET_PRICE;
+inp.value = count.innerText;
+}
+
+
+
+function populateUI() {
+const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
+const totalPrice = localStorage.getItem("selectedSeatTotalPrice");
+
+if (selectedSeats !== null && selectedSeats.length !== 0) {
+  seats.forEach((seat, index) => {
+    if (selectedSeats.indexOf(index) > -1) {
+      seat.classList.add("selected");
+    }
+  });
+}
+
+if (totalPrice !== null && totalPrice > 0) {
+  total.innerText = totalPrice;
+  count.innerText = selectedSeats.length;
+}
+}
+
+planeContainer.addEventListener("click", (event) => {
+if (
+  event.target.classList.contains("seat") &&
+  !event.target.classList.contains("occupied")
+) {
+  event.target.classList.toggle("selected");
+}
+updateSeat();
+});
+
+</script>
+

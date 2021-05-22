@@ -1,0 +1,63 @@
+{% extends "module2/headfoot.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/hotel_booking.css' %} ">
+
+{% for t in f %}
+<div class="app-form-group">
+              <h1>Hotel Booking Form</h1>
+</div>
+<div class="background">
+  <div class="container">
+    <div class="screen">
+      <div class="screen-body">
+        {% comment %} <div class="screen-body-item left">
+          <div class="app-title">
+            <span>BOOKING FORM</span>
+          </div>
+          <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
+        </div> {% endcomment %}
+        <div class="screen-body-item">
+          <div class="app-form">
+            <div class="app-form-group">
+              <p><u> Name</u> : {{t.name}} </p>
+            </div>
+            <br>
+            <div class="app-form-group">
+              <p><u>Location</u> :{{t.location}} </p>
+            </div>
+            <div class="app-form-group">
+              <p><u>City</u> : {{t.city}} </p>
+            </div>
+            <div class="app-form-group">
+              <p><u>Price (For 1 room)</u> : {{t.price}}/- </p>
+            </div>
+            
+            <form action="{% url 'module2:calculate' %}" method="POST">
+            {% csrf_token %}
+            <div class="app-form-group">
+              <input class="app-form-control" name="num" type="number" placeholder="Enter Number of Rooms">
+              <div class="app-form-group buttons">
+              <button type="submit" class="app-form-button">Calculate for Total Price</button>
+              </div>
+            </div>
+            <div class="app-form-group">
+              <p id="total" >Total Price: {{to}}</p>
+            </div>
+            </form>
+            <form action="{% url 'module2:payment' %}" method="POST">
+            {% csrf_token %}
+            <div class="app-form-group buttons">
+              <button type="submit" class="app-form-button">Proceed To Payment</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

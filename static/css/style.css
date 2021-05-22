@@ -933,7 +933,7 @@ h4.stats-info {
 	-ms-transition:0.5s all;
 } 
 .wthree-almub{
-    background: url(../images/img1.jpg)no-repeat center;
+    background: url('https://etimg.etb2bimg.com/photo/73411431.cms')no-repeat center;
     background-size: cover;
     min-height: 262px;
 	-webkit-transition: all 3s;
@@ -943,15 +943,15 @@ h4.stats-info {
 	display: block;
 }
 .wthree-almub.wthree-almub2 {
-    background: url(../images/img2.jpg)no-repeat center;
+    background: url('https://www.silverkris.com/wp-content/uploads/2018/04/New-Delhi-1920x1069-960x530.jpg')no-repeat center;
     background-size: cover;
 }
 .wthree-almub.wthree-almub3{
-    background: url(../images/img3.jpg)no-repeat center;
+    background: url('https://lp-cms-production.imgix.net/image_browser/Mumbai_nightlife_S.jpg')no-repeat center;
     background-size: cover;
 }
 .wthree-almub.wthree-almub4{
-    background: url(../images/img4.jpg)no-repeat center;
+    background: url('https://images.livemint.com/img/2020/04/27/600x338/PTI22-04-2020_000146A_1587698431982_1587990681209.jpg')no-repeat center;
     background-size: cover;
 }
 .albums1-left {
@@ -3429,3 +3429,7 @@ ul.simplefilter {
 	}
 }
 /*--//responsive--*/
+
+
+
+

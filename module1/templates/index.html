@@ -9,14 +9,13 @@
 <meta name="keywords" content="Tourism web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 function hideURLbar(){ window.scrollTo(0,1); } </script>
-
 	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
 <link rel="stylesheet" href="{% static 'css/font-awesome.css' %} ">
 <link href="//fonts.googleapis.com/css?family=Coda:400,800&amp;subset=latin-ext" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext" rel="stylesheet">
 </head>
-<body> 
+<body>
 <div class="main-agile">
 	<!-- banner -->
 	<div id="home" class="w3ls-banner"> 
@@ -26,6 +25,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="agileits-banner-info">
 					<div class="rw-wrapper">
 				<div class="rw-sentence">
+					<div class="rw-words rw-words-1">
+					{% if messages %}
+						{% for message in messages %}
+							<span>{{ message }}</span>
+							<span>{{ message }}</span>
+						{% endfor %}
+					{% endif %}
+					</div>
 					<div class="rw-words rw-words-1">
 						<span>Welcome To Travelaction</span>
 						<span>Welcome To Travelaction</span>
@@ -54,27 +61,47 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<div class="resp-tabs-container">
 							<div class="tab-1 resp-tab-content">
 								<div class="facts">
-									<form action="#" method="post">
+									<form action="{% url 'module1:hotels_list' %}" method="post">
+										{% csrf_token %}
 										<div class="reservation">
-											<ul>		
+											<ul>
 												<li  class="span1_of_1 desti">
 													 <div class="book_date">
-															<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-															<input type="text" placeholder="Departure City or Hotel" class="typeahead1 input-md form-control tt-input" required="">
-														
+<!--															<input type="text" placeholder="Departure City or Hotel" class="typeahead1 input-md form-control tt-input" required="" name="city">-->
+														 <center>
+
+														 <select name="city">
+															 <option value="some">Select City</option>
+															<option value="Hyderabad">Hyderabad</option>
+															<option value="Kolkata">Kolkata</option>
+															<option value="New Delhi">New Delhi</option>
+															<option value="Mumbai">Mumbai</option>
+															<option value="Kolkata">Kolkata</option>
+															<option value="Vijayawada">Vijayawada</option>
+															<option value="Chennai">Chennai</option>
+															<option value="Coimbatore">Coimbatore</option>
+															<option value="Visakhapatnam">Visakhapatnam</option>
+															<option value="Goa">Goa</option>
+															<option value="Manali">Manali</option>
+															<option value="Pondicherry">Pondicherry</option>
+															<option value="Kanyakumari">Kanyakumari</option>
+															 <option value="SriNagar">SriNagar</option>
+														  </select>
+															 </center>
+
+
 													 </div>					
 												 </li>
 											</ul>
 										</div>
-										<div class="reservation">
+										{% comment %} <div class="reservation">
 											<ul>	
 												 <li  class="span1_of_1">
 													 <h5>Check In</h5>
 													 <div class="book_date">
 													<div class="book_date">
 															<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-															<input  id="datepicker" name="date" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
-														 
+															<input  id="datepicker3" name="date" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
 													</div>	
 													 </div>		
 												 </li>
@@ -82,16 +109,22 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 													 <h5>Check Out</h5>
 													 <div class="book_date">
 															<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-															<input  id="datepicker" name="date" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
+															<input  id="datepicker4" name="date" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
 														
 													 </div>					
 												 </li>
 											</ul>
-										</div>
+										</div> {% endcomment %}
 										<div class="reservation w3l-submit">
 											<ul>	
 												 <li class="span1_of_3">
 														<div class="date_btn">
+															<br>
+															{% if user.is_authenticated %}
+
+																{% else %}
+																	<h4 style="color:skyblue;">You need to have an Account to View Available Hotels</h4>
+																{% endif %}
 																<input type="submit" value="Submit" />
 														</div>
 												 </li>
@@ -103,36 +136,50 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							</div>
 							<div class="tab-1 resp-tab-content">
 								<div class="facts">
-									<form action="#" method="post">
+									<form action="{% url 'module1:list' %}" method="get">
 										<div class="flights">
 											<div class="reservation">
-												<ul>		
+												<ul>
+													<center>
 													<li  class="span1_of_1 desti1">
 														 <div class="book_date">
-															
-																<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																<input type="text" placeholder="From" class="typeahead1 input-md form-control tt-input" required="">
-															
+<!--																<input type="text" placeholder="From" class="typeahead1 input-md form-control tt-input" name="source" id="source" required="">-->
+															 <select name="source">
+															 <option value="source">Source</option>
+															<option value="Hyderabad">Hyderabad</option>
+															<option value="Kolkata">Kolkata</option>
+															<option value="New Delhi">New Delhi</option>
+															<option value="Mumbai">Mumbai</option>
+															<option value="Bengaluru">Bengaluru</option>
+														  </select>
 														 </div>					
 													 </li>
 													 <li  class="span1_of_1 desti1">
 														 <div class="book_date">
 														
-																<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-																<input type="text" placeholder="To" class="typeahead1 input-md form-control tt-input" required="">
-															
+
+<!--																<input type="text" placeholder="To" class="typeahead1 input-md form-control tt-input" required="" id="destination" name="destination">-->
+															<select name="destination">
+															 <option value="source">Destination</option>
+															<option value="Hyderabad">Hyderabad</option>
+															<option value="Kolkata">Kolkata</option>
+															<option value="New Delhi">New Delhi</option>
+															<option value="Mumbai">Mumbai</option>
+															<option value="Bengaluru">Bengaluru</option>
+														  </select>
 														 </div>					
 													 </li>
+														</center>
 												</ul>
 											</div>
-											<div class="reservation">
+											{% comment %} <div class="reservation">
 												<ul>	
 													 <li  class="span1_of_1">
 														 <h5>Departure</h5>
 														 <div class="book_date">
 														
 															<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-															<input  id="datepicker" name="date" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
+															<input  id="datepicker1" name="date" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
 														
 														 </div>		
 													 </li>
@@ -141,17 +188,24 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 														 <div class="book_date">
 														
 															<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-															<input  id="datepicker" name="date" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
+															<input  id="datepicker2" name="date" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}">
 													
 														 </div>					
 													 </li>
 												</ul>
-											</div>
+											</div> {% endcomment %}
 											<div class="reservation w3l-submit">
 												<ul>	
 													 <li class="span1_of_3">
+
 															<div class="date_btn">
-															
+																<br><br><br>
+																{% if user.is_authenticated %}
+
+																{% else %}
+																	<h4 style="color:skyblue;">You need to have an Account to View Available Flights</h4>
+																{% endif %}
+
 																	<input type="submit" value="Search Flights" />
 															
 															</div>
@@ -170,9 +224,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</div>			
 </div>
 <!-- //banner-text -->
-<!-- //banner --> 
+<!-- //banner -->
 <!-- header -->
-<div class="header-w3layouts"> 
+<div class="header-w3layouts">
 	<!-- Navigation -->
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
@@ -182,30 +236,36 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-		</div> 
-		<div class="logo-agile-1"> 
+		</div>
+		<div class="logo-agile-1">
 			<h1><a class="logo" href = "{% url 'module1:home' %}"><i class="fa fa-plane" aria-hidden="true"></i>Travelcation</a></h1>
-		</div> 
+		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+				{% if user.is_authenticated %}
+					<li><a class="" style="color: black; font-size:17px">Welcome, {{user.username}}</a></li>
+				{% endif %}
 					<li  class="active"><a href = "{% url 'module1:home' %}">Home</a></li>
 					<li><a class="" href = "{% url 'module1:services' %}">Services</a></li>
 					<li><a class="" href = "{% url 'module1:gallery' %}">Gallery</a></li>
 					<li><a class="" href = "{% url 'module1:contact' %}">Contact Us</a></li>
+				{% if user.is_authenticated %}
+                	<li><a class="" href = "{% url 'initial:profile' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Profile</a></li>
+					<li><a class="" href = "{% url 'module1:dologout' %}">Logout</a></li>
+              	{% else %}
+                	<li><a class="" href = "{% url 'initial:register' %}">&nbsp;Login</a></li>
+					<li><a class="" href = "{% url 'initial:register' %}">Register</a></li>
+              	{% endif %}
+
 			</ul>
-			<div class="w3ls-social-icons-2">
-					<a class="facebook" href="https://www.facebook.com/KalyanVissamsetty"><i class="fa fa-facebook"></i></a>
-					<a class="twitter" href="https://twitter.com/kalyan_youtuber"><i class="fa fa-twitter"></i></a>
-					<a class="pinterest" href="https://pin.it/6nsRyyH"><i class="fa fa-google-plus"></i></a>
-					<a class="linkedin" href="https://www.linkedin.com/in/vissamsetty-kalyan-27a28918a/"><i class="fa fa-linkedin"></i></a>
-			</div>
+
 		</div>
 		<!-- //navbar-collapse -->
-	</nav>  
+	</nav>
 	<div class="clearfix"> </div>
-</div>	
+</div>
 <!-- //header -->
 <!-- welcome -->
 
@@ -223,9 +283,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 			</div>
 			<div class="albums-right">
-				<h4>Dolor Sit</h4>
-				<p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
-				<a class="w3more" href = "{% url 'module1:services' %}"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
+				<h4>Hyderabad</h4>
+				<p>Hyderabad is the capital of Telangana in Southern India, located on the banks of the Musi River and on the Deccan Plateau.</p>
+
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -235,8 +295,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div> 
 			</div>
 			<div class="albums-right">
-				<h4>Consequat</h4>
-				<p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
+				<h4>New Delhi</h4>
+				<p>New Delhi is the capital of India .New Delhi is also the seat of all three branches of the government of India,</p>
 				<a class="w3more" href = "{% url 'module1:services' %}"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
 			</div>
 			<div class="clearfix"></div>
@@ -247,8 +307,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 			</div>
 			<div class="albums1-left">
-				<h4>Dolores Btrs</h4>
-				<p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
+				<h4>Mumbai</h4>
+				<p>Mumbai also known as Bombay, the official name until 1995) is the capital city of Maharashtra</p>
 				<a class="w3more" href = "{% url 'module1:services' %}"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
 			</div> 
 			<div class="clearfix"></div>
@@ -259,8 +319,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 			</div>
 			<div class="albums1-left">
-				<h4>Nam aliquam</h4>
-				<p>Nsatolernatur auts oditaut miertase vertas.Measnseqe ustur magni dolores eoqus ratione voluptate.</p>
+				<h4>Bengaluru</h4>
+				<p>Bangalore, officially known as Bengaluru is the capital and the largest city of the Indian state of Karnataka. </p>
 				<a class="w3more" href = "{% url 'module1:services' %}"><i class="fa fa-mail-forward" aria-hidden="true"></i> More</a>
 			</div> 
 			<div class="clearfix"></div>
@@ -319,6 +379,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<li class="active" ><a href = "{% url 'module1:services' %}">Services</a></li>
 							<li><a class="" href = "{% url 'module1:gallery' %}">Gallery</a></li>
 							<li><a class="" href = "{% url 'module1:contact' %}">Contact Us</a></li>
+							 <li><a class="" href = "{% url 'module1:contact' %}">{{context.u}}</a></li>
 						 </ul>
 					</div>
 					<div class="counter-subw3l w3l-right-footer">
@@ -340,6 +401,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</div>
 	</div>
 </footer>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
 	<!-- //js -->
@@ -348,7 +412,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
+			$(".scroll").click(function(event){
 				event.preventDefault();
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 			});
@@ -359,7 +423,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('#horizontalTab').easyResponsiveTabs({
-				type: 'default', //Types: default, vertical, accordion           
+				type: 'default', //Types: default, vertical, accordion
 				width: 'auto', //auto or any width like 600px
 				fit: true   // 100% fit in a container
 			});
@@ -376,5 +440,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			  });
 	  </script>
 	<script type="text/javascript" src="{% static 'js/numscroller-1.0.js' %}"></script>
+
 </body>
 </html>

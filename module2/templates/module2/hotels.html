@@ -1,0 +1,77 @@
+{% extends "module2/headfoot.html" %}
+{% block content %}
+{% load static %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/hotels.css' %} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<main class="container">
+	<div class="h1 text-center" id="pageHeaderTitle">Available Hotels</div>
+	{% for t in test %}
+	<article class="postcard blue">
+		<a class="postcard__img_link" href="#">
+			<img class="postcard__img" src={{t.img}} alt="Image Title" />
+		</a>
+		<div class="postcard__text">
+			<h1 class="postcard__title blue"><a href="#">{{t.name}}</a></h1>
+			<div class="postcard__subtitle small">
+				<time datetime="2020-05-25 12:00:00">
+					<i class="fas fa-calendar-alt mr-2"></i>{{t.location}}
+				</time>
+			</div>
+			<div class="postcard__bar"></div>
+			<div class="postcard__preview-txt">
+				{{t.description}}
+			</div>
+                <ul class="postcard__tagbox">
+					<li class="tag__item">
+						{% for item in t.check %}
+    						<span class="fa fa-star checked"></span>
+						{% endfor %}
+						{% for item in t.unchecked %}
+    						<span class="fa fa-star"></span>
+						{% endfor %}
+                </li>
+					<li class="tag__item">
+					<a href="#" style="pointer-events: none" id="button" class="button">Price : {{t.price}} </a>
+				</li>
+				<li class="tag__item">
+					{% url 'module2:hotel_booking' t.id as tru %}
+					<a href="{{tru}}">Book Now</a>
+				</li>
+		
+				</ul>
+
+		</div>
+	</article>
+	{% endfor %}
+	{% if barchart %}
+		<center>
+		<img src="data:image/png;base64,{{barchart|safe}}" width="700" height="530">
+		</center>
+  	{% endif %}
+  <br>
+  <br>
+  <br>
+  <br>
+	{% if hist %}
+		<center>
+		<img src="data:image/png;base64,{{hist|safe}}" width="500" height="300">
+		</center>
+	{% endif %}
+
+</main>
+
+</body>
+
+
+
+
+
+{% endblock %}

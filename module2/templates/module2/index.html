@@ -2,14 +2,89 @@
 {% load static %}
 <html lang="en">
 <head>
-<title>Contact Us</title>
+<title>Available Flights</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> <!-- Bootstrap-Core-CSS -->
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" /> <!-- Style-CSS -->
-<link rel="stylesheet" href="{% static 'css/font-awesome.css' %} "> <!-- Font-Awesome-Icons-CSS -->
+<link rel="stylesheet" href="{% static 'css/font-awesome.css' %} ">
+	<link rel="stylesheet" href="{% static 'css/recommended.css' %} ">
+	<link href='https://fonts.googleapis.com/css?family=Alatsi' rel='stylesheet'>
+
+	   <style>
+	   @media (min-width: 800px)  {
+            img{
+                width: 800px;
+                height:580px;
+            }
+        }
+         @media (min-width: 500px) and (max-width:800px) {
+            img{
+                width:300px;
+                height: 200px
+            }
+        }
+        @media only screen and (min-width: 300px) and (max-width:500px) {
+            #box-2{
+                display: block;
+                background-color: blueviolet;
+            }
+        }
+.cardx {
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 50%;
+  border-radius: 25px;
+  background-color : whitesmoke;
+  padding-top : 15px;
+  height : 11rem;
+
+}
+
+.cardx:hover {
+  box-shadow: 0 8px 16px 0 rgba(54, 12, 117,0.5);
+}
+
+
+.containerx {
+  padding: 2px 16px;
+  height : 80%;
+}
+
+
+.cardy {
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 60%;
+  border-radius: 25px;
+  background-color : whitesmoke;
+  padding-top : 15px;
+  height : 11rem;
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+}
+
+.cardy:hover {
+  box-shadow: 0 8px 16px 0 rgba(54, 12, 117,0.5);
+}
+
+
+.containery {
+  padding: 2px 16px;
+}
+</style>
+
+	<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+	<link rel="stylesheet" href="{% static 'css/flights.css' %} "><!-- Font-Awesome-Icons-CSS -->
 <link href="//fonts.googleapis.com/css?family=Coda:400,800&amp;subset=latin-ext" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext" rel="stylesheet">
 </head>
@@ -34,18 +109,15 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-					<li class=""><a href = "{% url 'module1:home' %}">Home</a></li>
+					<li><a class="" style="color: black; font-size:17px">Welcome, {{u}}</a></li>
+					<li><a href = "{% url 'module1:home' %}">Home</a></li>
 					<li><a class="" href = "{% url 'module1:services' %}">Services</a></li>
-					<li class="active"><a class="" href = "{% url 'module1:gallery' %}">Gallery</a></li>
+					<li><a class="" href = "{% url 'module1:gallery' %}">Gallery</a></li>
 					<li><a class="" href = "{% url 'module1:contact' %}">Contact Us</a></li>
+					<li><a class="" href = "{% url 'initial:profile' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Profile</a></li>
+					<li><a class="" href = "{% url 'module2:log' %}">Logout</a></li>
 				</ul>
-				<div class="w3ls-social-icons-2">
-					<a class="facebook" href="https://www.facebook.com/KalyanVissamsetty"><i class="fa fa-facebook"></i></a>
-					<a class="twitter" href="https://twitter.com/kalyan_youtuber"><i class="fa fa-twitter"></i></a>
-					<a class="pinterest" href="https://pin.it/6nsRyyH"><i class="fa fa-google-plus"></i></a>
-					<a class="linkedin" href="https://www.linkedin.com/in/vissamsetty-kalyan-27a28918a/"><i class="fa fa-linkedin"></i></a>
-				</div>
+
 			</div>
 			<!-- //navbar-collapse -->
 		</nav>
@@ -53,7 +125,85 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<!-- //header -->
 </div>
 
+<center>
+<style>
+h2 span {
+    position: relative;
+    padding-bottom: 5px;
+}
+h2 span::after{
+    position: absolute; 
+    left: 0; 
+    bottom: 0; 
+    width: 100%; 
+    height: 1px; 
+    border-bottom: 1px solid #000; 
+    content: ""
+}
+</style>
+<h2 style="font-family: 'Alatsi';font-size: 30px;margin-top:1em;"><span>Analytical Prices</span></h2>
+	<table style="width:100%;"><br><br>
+	{% for a,b in val %}
+	<div class="cardx">
 
+  <div class="containerx">
+	  <h1 style="font-family: 'Trebuchet MS', sans-serif;font-size:25px;"><b>If you travel via {{ a }} your price is ₹ {{ b }}</b></h1>
+  </div>
+</div>
+<br><br>
+	{% endfor %}
+	</table>
+</center>
+
+
+<center>
+
+	{% if optimisedmin %}
+		<div class="cardy">
+  		<div class="containery">
+	  		<h3>Lowest ticket price from {{ s }} to {{ d }} is : ₹{{ eachmin }}</h3>
+			  <br>
+			<h3>If we travel via {{ viacity }} your Total ticket price will be : ₹{{ optimisedmin }}</h3>
+  		</div>
+		</div>
+		<br>
+	{% endif %}
+</center>
+
+
+
+
+<div class="courses-container">
+	{% for t in test %}
+	<div class="course">
+		<div class="course-preview">
+			<h6>From {{t.source}}</h6>
+			<br>
+			<h6>To {{t.destination}}</h6>
+			<h2>{{t.flight_name}}</h2>
+			<h6>{{t.flight_id}}</h6>
+			<a href="{% url 'module2:flight_structure' t.flight_id %}">View all Seats<i class="fa fa-chevron-right"></i></a>
+		</div>
+		<div class="course-info">
+			<div class="progress-container">
+				<span class="progress-text">
+					Via {{t.via}}
+				</span>
+			</div>
+			<h6>{{t.duration}}</h6>
+			<h2>Departure: {{t.departure}}</h2>
+			<h2>Arrival: {{t.arrival}}</h2><br>
+			<h5><b>Price: ₹{{t.price}}</b></h5>
+			<button class="btn" onclick="location.href='{% url 'module2:flight_structure' t.flight_id %}'">Continue</button>
+		</div>
+	</div>
+	{% endfor %}
+	{% if chart %}
+	<center>
+		<img src="data:image/png;base64,{{chart|safe}}">
+	</center>
+	{% endif %}
+</div>
 
 
 
@@ -144,14 +294,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-			});
-		});
-	</script>
 	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+	<script src="{% static 'js/flights.js' %}"></script>
+
 </body>
 </html>

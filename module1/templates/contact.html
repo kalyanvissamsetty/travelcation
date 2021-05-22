@@ -18,10 +18,10 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext" rel="stylesheet">
 <!-- //online-fonts -->
 </head>
-<body> 
+<body>
 <div class="main-agile banner-2">
 	<!-- header -->
-	<div class="header-w3layouts"> 
+	<div class="header-w3layouts">
 		<!-- Navigation -->
 		<nav class="navbar navbar-default">
 			<div class="navbar-header">
@@ -31,31 +31,29 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-			</div> 
-			<div class="logo-agile-1"> 
+			</div>
+			<div class="logo-agile-1">
 				<h1><a class="logo" href = "{% url 'module1:home' %}"><i class="fa fa-plane" aria-hidden="true"></i>Travelcation</a></h1>
-			</div> 
+			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+
+					<li><a class="" style="color: black; font-size:17px">Welcome, {{u}}</a></li>
 					<li class=""><a href = "{% url 'module1:home' %}">Home</a></li>
 					<li><a class="" href = "{% url 'module1:services' %}">Services</a></li>
 					<li><a class="" href = "{% url 'module1:gallery' %}">Gallery</a></li>
 					<li class="active"><a class="" href = "{% url 'module1:contact' %}">Contact Us</a></li>
+					<li><a class="" href = "{% url 'initial:profile' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Profile</a></li>
+					<li><a class="" href = "{% url 'module1:dologout' %}">Logout</a></li>
 				</ul>
-				<div class="w3ls-social-icons-2">
-					<a class="facebook" href="https://www.facebook.com/KalyanVissamsetty"><i class="fa fa-facebook"></i></a>
-					<a class="twitter" href="https://twitter.com/kalyan_youtuber"><i class="fa fa-twitter"></i></a>
-					<a class="pinterest" href="https://pin.it/6nsRyyH"><i class="fa fa-google-plus"></i></a>
-					<a class="linkedin" href="https://www.linkedin.com/in/vissamsetty-kalyan-27a28918a/"><i class="fa fa-linkedin"></i></a>
-				</div>
 			</div>
 			<!-- //navbar-collapse -->
-		</nav>  
-	</div>	
+		</nav>
+	</div>
 	<!-- //header -->
-</div> 
+</div>
 <!-- contact -->
 <section class="contact-w3ls">
 	<div class="container">
@@ -66,7 +64,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="col-lg-6 col-md-6 col-sm-6 contact-w3-agile2" data-aos="flip-left">
 			<div class="contact-agileits">
 				<h4>Get In Touch</h4>
-				<form action="#" method="post">
+				<form action="{% url 'module1:feedback' %}" method="POST">
+				{% csrf_token %}
 					<div class="control-group form-group">
                         <div class="controls">
                             <label class="contact-p1">Full Name:</label> 
@@ -88,8 +87,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<p class="help-block"></p>
 						</div>
                     </div>
+					 <div class="control-group form-group">
+                        <div class="controls">
+                            <label class="contact-p1">FeedBack</label>
+                            <input type="text" class="form-control" name="feedback" Placeholder=" " required="">
+							<p class="help-block"></p>
+						</div>
+                    </div>
                     <div id="success"></div>
-                    <!-- For success/fail messages -->
                     <button type="submit" class="btn btn-primary">Send</button>	
 				</form>            
 			</div>
@@ -190,7 +195,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
+			$(".scroll").click(function(event){
 				event.preventDefault();
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 			});

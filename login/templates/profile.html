@@ -1,0 +1,118 @@
+{% extends "base1.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+            <p class="text-secondary">{{ user.phone }}</p>
+        </div>
+      </div>
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Profile Info</legend>
+              {{ u_form|crispy }}
+              {{ p_form|crispy }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Update</button>
+          </div>
+      </form>
+    </div>
+{% if all %}
+<center><h2>No Hotels and Flights are Booked</h2></center>
+{% endif %}
+
+{% if a1 %}
+<center><h2>Flight Tickets Booked</h2></center>
+{% else %}
+<center><h2>You have Not Booked Any Flights</h2></center>
+<br><br>
+<br><br>
+{% endif %}
+<br><br>
+
+{% for i in li %}<br>
+<div class="card text-center">
+
+  <div class="card-header">
+    Tickets Booked from {{i.source}} to {{i.destination}}
+  </div>
+  <div class="card-body">
+      <center>
+    <table class="table">
+        <tbody>
+    <tr>
+      <td>Flight Name</td>
+      <td>{{i.flight_name}}</td>
+    </tr>
+    <tr>
+      <td>Flight ID</td>
+      <td>{{i.flight_id}}</td>
+    </tr>
+    <tr>
+      <td>Price of One Ticket</td>
+      <td>₹{{i.price}}</td>
+    </tr>
+    <tr>
+      <td>Total Seats</td>
+      <td>{{i.seats}}</td>
+    </tr>
+    <tr>
+      <td>Booked with Card Number</td>
+      <td>{{i.cardno}}</td>
+    </tr><tr>
+      <td>Total Amount Paid</td>
+      <td>₹{{i.totalprice}}</td>
+    </tr>
+  </tbody>
+</table></center>
+  </div>
+  <div class="card-footer text-muted">
+    Departue : {{i.departure}}      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;        Arrival : {{i.arrival}}
+  </div>
+</div>
+{% endfor %}
+{% if b1 %}
+<br><br>
+<center><h2>Hotel Rooms Booked</h2></center>
+<br>
+{% else %}
+<br><br>
+<center><h2>You have Not Booked Any Rooms</h2></center>
+<br><br>
+{% endif %}
+{% for i in li1 %}<br>
+<div class="card text-center">
+    <div class="card-header">
+    {{i.name}}
+  </div>
+  <div class="card-body">
+      <center>
+    <table class="table">
+        <tbody>
+    <tr>
+      <td>City</td>
+      <td>{{i.city}}</td>
+    </tr>
+    <tr>
+      <td>Rooms</td>
+      <td>{{i.rooms}}</td>
+    </tr>
+    <tr>
+      <td>Booked with Card Number</td>
+      <td>{{i.cardno}}</td>
+    </tr><tr>
+      <td>Total Amount Paid</td>
+      <td>₹{{i.totalprice}}</td>
+    </tr>
+  </tbody>
+</table></center>
+  </div>
+</div>
+{% endfor %}
+{% endblock content %}

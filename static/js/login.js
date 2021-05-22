@@ -1,33 +1,11 @@
-var $loginMsg = $('.loginMsg'),
-  $login = $('.login'),
-  $signupMsg = $('.signupMsg'),
-  $signup = $('.signup'),
-  $frontbox = $('.frontbox');
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".container");
 
-$('#switch1').on('click', function() {
-  $loginMsg.toggleClass("visibility");
-  $frontbox.addClass("moving");
-  $signupMsg.toggleClass("visibility");
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
+});
 
-  $signup.toggleClass('hide');
-  $login.toggleClass('hide');
-})
-
-$('#switch2').on('click', function() {
-  $loginMsg.toggleClass("visibility");
-  $frontbox.removeClass("moving");
-  $signupMsg.toggleClass("visibility");
-
-  $signup.toggleClass('hide');
-  $login.toggleClass('hide');
-})
-
-setTimeout(function(){
-  $('#switch1').click()
-},1000)
-
-setTimeout(function(){
-  $('#switch2').click()
-},3000)
-
-
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
+});
