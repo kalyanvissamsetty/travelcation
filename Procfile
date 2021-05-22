@@ -1,1 +1,1 @@
-web:gunicorn travelcation.wsgi --log-file -
+web: gunicorn travelcation.wsgi --log-file -
